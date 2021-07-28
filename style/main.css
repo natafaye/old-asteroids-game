@@ -1,0 +1,281 @@
+﻿/*****************************
+Main CSS stylesheet for SURVIVAL
+*****************************/
+
+/****Fonts****/
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('ubuntu.eot');
+	src: local('Ubuntu'), url('ubuntu.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nikaia';
+	src: url('nikaia.eot');
+	src: local('Nikaia'), url('nikaia.ttf') format('truetype');
+}
+
+/****Reset****/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td, input {margin: 0; padding: 0; outline: 0;}
+
+/****Layout****/
+body {
+	text-align: center;
+	background-color: #000;
+	color: #FFF;
+}
+
+#wrap {
+	margin: 0 auto;
+	width: 1000px;
+	background: url(../img/starfield.png);
+}
+
+/****Header****/
+#header {
+	height: 90px;
+	width: 1000px;
+	margin-bottom: -90px;
+	overflow: hidden;
+}
+
+h1 {
+	position: relative;
+	z-index: 20;
+	margin: 15px;
+	font-size: 50px;
+	font-family: 'Nikaia';
+	letter-spacing: 2px;
+	color: #FFF;
+	-webkit-text-stroke: 2px #FFAF00;
+}
+	
+/****Main****/
+#main {
+	height: 650px;
+	position: relative;
+	overflow: hidden;
+}
+
+#ship {
+	width: 128px;
+	height: 128px;
+	background: url(../img/spaceship_1.png) no-repeat;
+	position: absolute;
+	top: 460px;
+	left: 430px;
+	z-index: 2;
+}
+
+.asteroid {
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	background: url(../img/asteroid.png) no-repeat;
+	z-index: 5;
+}
+
+.photon {
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	background: url(../img/green_dot.png) no-repeat;
+	z-index: 3;
+}
+
+.battery {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	background: url(../img/small_battery.png) no-repeat;
+	z-index: 3;
+}
+
+.heart {
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	background: url(../img/heart.png) no-repeat;
+	z-index: 3;
+}
+
+.laser {
+	width: 2px;
+	height: 25px;
+	position: absolute;
+	top: 450px;
+	background-color: red;
+	z-index: 1;
+}
+
+.side_laser {
+	height: 2px;
+	width: 25px;
+	top: 545px;
+}
+
+.explosion {
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	background: url(../img/explosion.gif) no-repeat;
+}
+
+/****Messages****/
+#game_over {
+	background: #F2F2F2 url(../img/fail.png) -20px -20px no-repeat;
+}
+
+#success {
+	background: #F2F2F2 url(../img/pass.png) -10px -30px no-repeat;
+}
+
+.alert_message {
+	position: absolute;
+	width: 300px;
+	font-family: Ubuntu;
+	background: #F2F2F2;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	z-index: 50;
+}
+
+.alert_message p {
+	margin: 15px;
+	color: #2B2B2B;
+	font-size: 40px;
+}
+
+.alert_message a:link, .alert_message a:visited {
+	display: block;
+	height: 40px;
+	margin: 15px 15px 0 175px;
+	color: #2B2B2B;
+	text-align: right;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+.alert_message a:hover, .alert_message a:active {
+	color: #FFAF00;
+}
+
+.alert_message li {
+	width: 150px;
+	list-style-type: none;
+	margin: 0 auto;
+	color: #2B2B2B;
+}
+
+#stats h3 {
+	font-size: 30px;
+	color: green;
+}
+
+/****Upgrade****/
+#upgrade {
+	width: 600px;
+}
+
+#upgrade h2 {
+	font-size: 40px;
+	color: #FFAF00;
+}
+
+#upgrade div {
+	width: 280px;
+	margin: 10px;
+}
+
+#energy_upgrades, #weapon_upgrades {
+	float: left;
+}
+
+#health_upgrades, #ship_upgrades, #extras{
+	float: right;
+}
+
+#upgrade h3 {
+	font-size: 30px;
+	color: #2B2B2B;
+}
+
+#upgrade li {
+	width: 250px;
+	margin: 5px;
+}
+
+#upgrade li.affordable {
+	cursor: pointer;
+}
+
+#point_count {
+	color: green;
+	font-size: 30px;
+}
+
+.price {
+	color: #A2A2A2;
+}
+
+li.affordable span.price {
+	color: #FFAF00;
+}
+
+/****Footer****/
+#footer {
+	height: 60px;
+	position: relative;
+	z-index: 20;
+	margin-top: -60px;
+}
+
+#energy_meter {
+	float: left;
+	height: 50px;
+	background: url(../img/battery.png) no-repeat;
+}
+
+#photon_meter {
+	float: left;
+	height: 50px;
+	margin-left: 10px;
+	padding-left: 30px;
+	line-height: 40px;
+	font-family: Ubuntu;
+	color: green;
+	font-size: 20px;
+	background: url(../img/green_dot.png) 5px 12px no-repeat;
+}
+
+#health_meter {
+	float: right;
+	height: 50px;
+	margin-right: 10px;
+	background: url(../img/heart.png) 12px 7px no-repeat;
+}
+
+#health_meter div.meter div {
+	background-color: #FF0000;
+}
+
+#photon_meter  div.photon{
+	position: static;
+	float: left;
+	margin: 9px;
+}
+
+div.meter {
+	background-color: #E6E6E6;
+	height: 20px;
+	width: 100px;
+	margin: 10px 0 20px 45px;
+}
+
+div.meter div {
+	background-color: #FFAF00;
+	height: 20px;
+	width: 100px;
+}
